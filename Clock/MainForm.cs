@@ -51,6 +51,7 @@ namespace Clock
 				MessageBoxIcon.Information
 				);
 		}*/
+
 		private void labelTime_DoubleClick(object sender, EventArgs e)
 		{
 			cbShowDate.Visible = true;
