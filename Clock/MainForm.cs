@@ -40,7 +40,7 @@ namespace Clock
 			this.ShowInTaskbar = false;
 		}
 
-		private void labelTime_DoubleClick(object sender, EventArgs e)
+		/*private void labelTime_DoubleClick(object sender, EventArgs e)
 		{
 			MessageBox.Show
 				(
@@ -50,6 +50,15 @@ namespace Clock
 				MessageBoxButtons.OK,
 				MessageBoxIcon.Information
 				);
+		}*/
+		private void labelTime_DoubleClick(object sender, EventArgs e)
+		{
+			cbShowDate.Visible = true;
+			btnHideControls.Visible = true;
+			this.TransparencyKey = this.BackColor;
+			this.FormBorderStyle = FormBorderStyle.None;
+			labelTime.BackColor = Color.AliceBlue;
+			this.ShowInTaskbar = true;
 		}
 	}
 }
