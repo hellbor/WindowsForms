@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,8 +18,11 @@ namespace Clock
 			InitializeComponent();
 			labelTime.BackColor = Color.AliceBlue;
 
+			labelTime.ForeColor = Color.DarkCyan;
+
 			this.Location = new Point(Screen.PrimaryScreen.Bounds.Width - this.Width, 50);
 		}
+
 		void SetVisibility(bool visible)
 		{
 			cbShowDate.Visible = visible;
@@ -50,34 +54,11 @@ namespace Clock
 
 		private void btnHideControls_Click(object sender, EventArgs e)
 		{
-			/*cbShowDate.Visible = false;
-			btnHideControls.Visible = false;
-			this.TransparencyKey = this.BackColor;
-			this.FormBorderStyle= FormBorderStyle.None;
-			labelTime.BackColor = Color.AliceBlue;
-			this.ShowInTaskbar = false;*/
-
 			SetVisibility(false);
 		}
 
 		private void labelTime_DoubleClick(object sender, EventArgs e)
 		{
-			/*MessageBox.Show
-				(
-				this,
-				"Вы два раза щелкнули мышью по времени, и теперь вы управляете временем",
-				"Info",
-				MessageBoxButtons.OK,
-				MessageBoxIcon.Information
-				);*/
-
-			/*cbShowDate.Visible = true;
-			btnHideControls.Visible = true;
-			this.TransparencyKey = Color.Empty;
-			this.FormBorderStyle = FormBorderStyle.FixedToolWindow;
-			labelTime.BackColor = Color.AliceBlue;
-			this.ShowInTaskbar = true;*/
-
 			SetVisibility(true);
 		}
 
