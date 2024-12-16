@@ -37,7 +37,7 @@ namespace Clock
 		{
 			labelTime.Text = DateTime.Now.ToString
 				(
-				"hh:mm:ss tt", System.Globalization.CultureInfo.InvariantCulture
+				"HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture
 				);
 			if (cbShowDate.Checked)
 			{
