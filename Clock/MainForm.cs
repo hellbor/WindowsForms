@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
@@ -17,10 +18,8 @@ namespace Clock
 		{
 			InitializeComponent();
 			labelTime.BackColor = Color.AliceBlue;
-
-			labelTime.ForeColor = Color.DarkCyan;
-
 			this.Location = new Point(Screen.PrimaryScreen.Bounds.Width - this.Width, 50);
+			SetVisibility(false);
 		}
 
 		void SetVisibility(bool visible)
@@ -54,12 +53,12 @@ namespace Clock
 
 		private void btnHideControls_Click(object sender, EventArgs e)
 		{
-			SetVisibility(false);
+			SetVisibility(cmShowControls.Checked = false);
 		}
 
 		private void labelTime_DoubleClick(object sender, EventArgs e)
 		{
-			SetVisibility(true);
+			SetVisibility(cmShowControls.Checked = true);
 		}
 
 		private void cmExit_Click(object sender, EventArgs e)
@@ -100,5 +99,35 @@ namespace Clock
 				this.TopMost = false;
 			}
 		}
+
+		private void cmShowControls_CheckedChanged(object sender, EventArgs e)
+		{
+			SetVisibility(cmShowControls.Checked);
+		}
+
+		private void SetColor(object sender, EventArgs e)
+		{
+			ColorDialog dialog = new ColorDialog();
+			dialog.Color = labelTime.BackColor;
+			switch ((sender as ToolStripMenuItem).Text)
+			{
+				case "Background color": dialog.Color = labelTime.BackColor; break;
+				case "Foreground color": dialog.Color = labelTime.ForeColor; break;
+			}
+			if (dialog.ShowDialog() == DialogResult.OK)
+			{
+				switch((sender as ToolStripMenuItem).Text)	//as - оператор преобразования типа
+					//Оператор 'as' значение слева приводит к типу справа
+				{
+					case "Background color":labelTime.BackColor = dialog.Color; break;
+					case "Foreground color":labelTime.ForeColor = dialog.Color; break;
+				}
+			}
+		}
+
+		//smallCamel
+		//BigCamel
+		//snake_case
+		//SNAKE_CASE
 	}
 }
