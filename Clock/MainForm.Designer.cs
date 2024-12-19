@@ -38,6 +38,7 @@
 			this.cmShowDate = new System.Windows.Forms.ToolStripMenuItem();
 			this.cmShowWeekday = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+			this.FontMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.cmColors = new System.Windows.Forms.ToolStripMenuItem();
 			this.cmBackColor = new System.Windows.Forms.ToolStripMenuItem();
 			this.cmForeColor = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,11 +74,12 @@
             this.cmShowDate,
             this.cmShowWeekday,
             this.toolStripSeparator3,
+            this.FontMenuItem,
             this.cmColors,
             this.toolStripSeparator2,
             this.cmExit});
 			this.contextMenu.Name = "contextMenu";
-			this.contextMenu.Size = new System.Drawing.Size(153, 154);
+			this.contextMenu.Size = new System.Drawing.Size(153, 176);
 			// 
 			// cmTopmost
 			// 
@@ -121,6 +123,12 @@
 			this.toolStripSeparator3.Name = "toolStripSeparator3";
 			this.toolStripSeparator3.Size = new System.Drawing.Size(149, 6);
 			// 
+			// FontMenuItem
+			// 
+			this.FontMenuItem.Name = "FontMenuItem";
+			this.FontMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.FontMenuItem.Text = "Fonts";
+			// 
 			// cmColors
 			// 
 			this.cmColors.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -133,14 +141,14 @@
 			// cmBackColor
 			// 
 			this.cmBackColor.Name = "cmBackColor";
-			this.cmBackColor.Size = new System.Drawing.Size(168, 22);
+			this.cmBackColor.Size = new System.Drawing.Size(180, 22);
 			this.cmBackColor.Text = "Background color";
 			this.cmBackColor.Click += new System.EventHandler(this.SetColor);
 			// 
 			// cmForeColor
 			// 
 			this.cmForeColor.Name = "cmForeColor";
-			this.cmForeColor.Size = new System.Drawing.Size(168, 22);
+			this.cmForeColor.Size = new System.Drawing.Size(180, 22);
 			this.cmForeColor.Text = "Foreground color";
 			this.cmForeColor.Click += new System.EventHandler(this.SetColor);
 			// 
@@ -244,6 +252,7 @@
 		private System.Windows.Forms.ToolStripMenuItem cmBackColor;
 		private System.Windows.Forms.ToolStripMenuItem cmForeColor;
 		private System.Windows.Forms.ToolStripMenuItem cmShowControls;
+		private System.Windows.Forms.ToolStripMenuItem FontMenuItem;
 	}
 }
 

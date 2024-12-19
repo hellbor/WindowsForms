@@ -14,14 +14,18 @@ namespace Clock
 {
 	public partial class MainForm : Form
 	{
+		private PrivateFontCollection privateFonts;
 		public MainForm()
 		{
 			InitializeComponent();
 			labelTime.BackColor = Color.AliceBlue;
 			this.Location = new Point(Screen.PrimaryScreen.Bounds.Width - this.Width, 50);
 			SetVisibility(false);
-		}
 
+			//PrivateFontCollection fontCollection = new PrivateFontCollection();
+			//fontCollection.AddFontFile(@"D:\Users\Усик\source\repos\WindowsForms\Clock\Fonts\Painter.ttf");
+			//labelTime.Font = new Font(fontCollection.Families[0], 60);
+		}
 		void SetVisibility(bool visible)
 		{
 			cbShowDate.Visible = visible;
@@ -116,11 +120,11 @@ namespace Clock
 			}
 			if (dialog.ShowDialog() == DialogResult.OK)
 			{
-				switch((sender as ToolStripMenuItem).Text)	//as - оператор преобразования типа
-					//Оператор 'as' значение слева приводит к типу справа
+				switch ((sender as ToolStripMenuItem).Text) //as - оператор преобразования типа
+															//Оператор 'as' значение слева приводит к типу справа
 				{
-					case "Background color":labelTime.BackColor = dialog.Color; break;
-					case "Foreground color":labelTime.ForeColor = dialog.Color; break;
+					case "Background color": labelTime.BackColor = dialog.Color; break;
+					case "Foreground color": labelTime.ForeColor = dialog.Color; break;
 				}
 			}
 		}

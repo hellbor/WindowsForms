@@ -16,5 +16,10 @@ namespace Clock
 		{
 			InitializeComponent();
 		}
+
+		private void ChooseFontForm_Load(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

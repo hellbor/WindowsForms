@@ -125,6 +125,7 @@
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "ChooseFontForm";
 			this.Text = "ChooseFont";
+			this.Load += new System.EventHandler(this.ChooseFontForm_Load);
 			((System.ComponentModel.ISupportInitialize)(this.nudFontSize)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
