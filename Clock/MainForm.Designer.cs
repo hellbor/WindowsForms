@@ -38,7 +38,7 @@
 			this.cmShowDate = new System.Windows.Forms.ToolStripMenuItem();
 			this.cmShowWeekday = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-			this.FontMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.cmChooseFont = new System.Windows.Forms.ToolStripMenuItem();
 			this.cmColors = new System.Windows.Forms.ToolStripMenuItem();
 			this.cmBackColor = new System.Windows.Forms.ToolStripMenuItem();
 			this.cmForeColor = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,6 +49,7 @@
 			this.btnHideControls = new System.Windows.Forms.Button();
 			this.cbShowWeekDay = new System.Windows.Forms.CheckBox();
 			this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+			this.cmShowConsole = new System.Windows.Forms.ToolStripMenuItem();
 			this.contextMenu.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -73,13 +74,14 @@
             this.toolStripSeparator1,
             this.cmShowDate,
             this.cmShowWeekday,
+            this.cmShowConsole,
             this.toolStripSeparator3,
-            this.FontMenuItem,
+            this.cmChooseFont,
             this.cmColors,
             this.toolStripSeparator2,
             this.cmExit});
 			this.contextMenu.Name = "contextMenu";
-			this.contextMenu.Size = new System.Drawing.Size(153, 176);
+			this.contextMenu.Size = new System.Drawing.Size(153, 198);
 			// 
 			// cmTopmost
 			// 
@@ -123,11 +125,12 @@
 			this.toolStripSeparator3.Name = "toolStripSeparator3";
 			this.toolStripSeparator3.Size = new System.Drawing.Size(149, 6);
 			// 
-			// FontMenuItem
+			// cmChooseFont
 			// 
-			this.FontMenuItem.Name = "FontMenuItem";
-			this.FontMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.FontMenuItem.Text = "Fonts";
+			this.cmChooseFont.Name = "cmChooseFont";
+			this.cmChooseFont.Size = new System.Drawing.Size(152, 22);
+			this.cmChooseFont.Text = "Choose fonts";
+			this.cmChooseFont.Click += new System.EventHandler(this.cmChooseFont_Click);
 			// 
 			// cmColors
 			// 
@@ -212,6 +215,14 @@
 			this.notifyIcon.Visible = true;
 			this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
 			// 
+			// cmShowConsole
+			// 
+			this.cmShowConsole.CheckOnClick = true;
+			this.cmShowConsole.Name = "cmShowConsole";
+			this.cmShowConsole.Size = new System.Drawing.Size(152, 22);
+			this.cmShowConsole.Text = "Show console";
+			this.cmShowConsole.CheckedChanged += new System.EventHandler(this.cmShowConsole_CheckedChanged);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -252,7 +263,8 @@
 		private System.Windows.Forms.ToolStripMenuItem cmBackColor;
 		private System.Windows.Forms.ToolStripMenuItem cmForeColor;
 		private System.Windows.Forms.ToolStripMenuItem cmShowControls;
-		private System.Windows.Forms.ToolStripMenuItem FontMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem cmChooseFont;
+		private System.Windows.Forms.ToolStripMenuItem cmShowConsole;
 	}
 }
 
