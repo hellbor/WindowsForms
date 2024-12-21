@@ -37,6 +37,7 @@
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.cmShowDate = new System.Windows.Forms.ToolStripMenuItem();
 			this.cmShowWeekday = new System.Windows.Forms.ToolStripMenuItem();
+			this.cmShowConsole = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
 			this.cmChooseFont = new System.Windows.Forms.ToolStripMenuItem();
 			this.cmColors = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,7 +50,6 @@
 			this.btnHideControls = new System.Windows.Forms.Button();
 			this.cbShowWeekDay = new System.Windows.Forms.CheckBox();
 			this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
-			this.cmShowConsole = new System.Windows.Forms.ToolStripMenuItem();
 			this.contextMenu.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -120,6 +120,14 @@
 			this.cmShowWeekday.Text = "Show weekday";
 			this.cmShowWeekday.CheckedChanged += new System.EventHandler(this.cmShowWeekDay_CheckedChanged);
 			// 
+			// cmShowConsole
+			// 
+			this.cmShowConsole.CheckOnClick = true;
+			this.cmShowConsole.Name = "cmShowConsole";
+			this.cmShowConsole.Size = new System.Drawing.Size(152, 22);
+			this.cmShowConsole.Text = "Show console";
+			this.cmShowConsole.CheckedChanged += new System.EventHandler(this.cmShowConsole_CheckedChanged);
+			// 
 			// toolStripSeparator3
 			// 
 			this.toolStripSeparator3.Name = "toolStripSeparator3";
@@ -144,14 +152,14 @@
 			// cmBackColor
 			// 
 			this.cmBackColor.Name = "cmBackColor";
-			this.cmBackColor.Size = new System.Drawing.Size(180, 22);
+			this.cmBackColor.Size = new System.Drawing.Size(168, 22);
 			this.cmBackColor.Text = "Background color";
 			this.cmBackColor.Click += new System.EventHandler(this.SetColor);
 			// 
 			// cmForeColor
 			// 
 			this.cmForeColor.Name = "cmForeColor";
-			this.cmForeColor.Size = new System.Drawing.Size(180, 22);
+			this.cmForeColor.Size = new System.Drawing.Size(168, 22);
 			this.cmForeColor.Text = "Foreground color";
 			this.cmForeColor.Click += new System.EventHandler(this.SetColor);
 			// 
@@ -215,14 +223,6 @@
 			this.notifyIcon.Visible = true;
 			this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
 			// 
-			// cmShowConsole
-			// 
-			this.cmShowConsole.CheckOnClick = true;
-			this.cmShowConsole.Name = "cmShowConsole";
-			this.cmShowConsole.Size = new System.Drawing.Size(152, 22);
-			this.cmShowConsole.Text = "Show console";
-			this.cmShowConsole.CheckedChanged += new System.EventHandler(this.cmShowConsole_CheckedChanged);
-			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -237,6 +237,7 @@
 			this.Name = "MainForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
 			this.Text = "Clock PV_319";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
 			this.contextMenu.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
