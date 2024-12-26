@@ -13,6 +13,7 @@ using System.Runtime.InteropServices;
 using System.IO;
 using System.Diagnostics;
 using Microsoft.Win32;
+using System.Media;
 
 namespace Clock
 {
@@ -20,6 +21,7 @@ namespace Clock
 	{
 		private PrivateFontCollection privateFonts;
 		ChooseFontForm fontDialog = null;
+		AlarmsForm alarms = null;
 		public MainForm()
 		{
 			InitializeComponent();
@@ -30,6 +32,7 @@ namespace Clock
 			cmShowConsole.Checked = true;
 			LoadSettings();
 			//fontDialog = new ChooseFontForm();
+			alarms = new AlarmsForm();
 		}
 		void SetVisibility(bool visible)
 		{
@@ -198,9 +201,16 @@ namespace Clock
 			else rk.DeleteValue(key_name, false);
 			rk.Dispose();
 		}
+
+		private void cmAlarms_Click(object sender, EventArgs e)
+		{
+			alarms.StartPosition = FormStartPosition.Manual;
+			alarms.Location = new Point(this.Location.X - alarms.Width, this.Location.Y * 2);
+			alarms.ShowDialog();
+		}
 	}
 }
-		//smallCamel
-		//BigCamel
-		//snake_case
-		//SNAKE_CASE
+//smallCamel
+//BigCamel
+//snake_case
+//SNAKE_CASE
