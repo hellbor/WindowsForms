@@ -26,13 +26,6 @@ namespace Clock
 			openFile = new OpenFileDialog();
 		}
 
-		private void AlarmsForm_Load(object sender, EventArgs e)
-		{
-			InitializeComponent();
-			addAlarm = new AddAlarmForm();
-			openFile = new OpenFileDialog();
-		}
-
 		private void btnAdd_Click(object sender, EventArgs e)
 		{
 			addAlarm.StartPosition = FormStartPosition.Manual;

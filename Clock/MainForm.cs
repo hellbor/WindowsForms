@@ -28,12 +28,15 @@ namespace Clock
 			InitializeComponent();
 			labelTime.BackColor = Color.Black;
 			labelTime.ForeColor = Color.MediumSpringGreen;
+
 			this.Location = new Point(Screen.PrimaryScreen.Bounds.Width - this.Width, 50);
 			SetVisibility(false);
+
 			cmShowConsole.Checked = true;
 			LoadSettings();
 			//fontDialog = new ChooseFontForm();
 			alarms = new AlarmsForm();
+			Console.WriteLine(DateTime.MinValue);
 		}
 		void SetVisibility(bool visible)
 		{
@@ -87,7 +90,7 @@ namespace Clock
 			if (cbShowDate.Checked)
 			{
 				labelTime.Text += "\n";
-				labelTime.Text += DateTime.Now.ToString("yyyy.MM.dd");
+				labelTime.Text += DateTime.Now.ToString("dd.MM.yyyy");
 			}
 			if (cbShowWeekDay.Checked)
 			{
