@@ -14,6 +14,11 @@ namespace Clock
 	{
 		AddAlarmForm addAlarm = null;
 		OpenFileDialog openFile = null;
+		public ListBox LB_Alarms
+		{
+			get => lbAlarms;
+			//set => lbAlarms = value;
+		}
 		public AlarmsForm()
 		{
 			InitializeComponent();
@@ -23,7 +28,9 @@ namespace Clock
 
 		private void AlarmsForm_Load(object sender, EventArgs e)
 		{
-
+			InitializeComponent();
+			addAlarm = new AddAlarmForm();
+			openFile = new OpenFileDialog();
 		}
 
 		private void btnAdd_Click(object sender, EventArgs e)
