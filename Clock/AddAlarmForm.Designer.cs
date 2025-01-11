@@ -168,6 +168,7 @@
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
 			this.Name = "AddAlarmForm";
 			this.Text = "AddAlarm";
+			this.Load += new System.EventHandler(this.AddAlarmForm_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
