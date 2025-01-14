@@ -44,7 +44,7 @@ namespace Clock
 					Cast<object>().
 					Select((item, index) => clbWeekDays.GetItemChecked(index)).ToArray()
 				);
-			Console.WriteLine(week);
+			//Console.WriteLine(week);
 			Alarm.Date = dtpDate.Enabled ? dtpDate.Value : DateTime.MinValue;
 			Alarm.Time = dtpTime.Value.TimeOfDay;
 			Alarm.WeekDays = week;
