@@ -50,6 +50,21 @@ namespace Clock
 			info += $"{Message}\t";
 			return info;
 		}
+
+		/*public static bool operator ==(Alarm left, Alarm right)
+		{
+			return
+				left.Date == right.Date &&
+				left.Time == right.Time &&
+				left.WeekDays == right.WeekDays &&
+				left.Filename == right.Filename &&
+				left.Message == right.Message;
+		}
+			public static bool operator !=(Alarm left, Alarm right)
+		{
+			return !(left == right);
+		}*/
+
 		/*public static bool operator > (Alarm left, Alarm right)
 		{
 			if (left.Date != DateTime.MinValue || right.Date != DateTime.MinValue)

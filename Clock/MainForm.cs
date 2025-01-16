@@ -88,6 +88,10 @@ namespace Clock
 			//return nextAlarm;
 			return actualAlarms.Min();
 		}
+		bool CompareDates(DateTime date1, DateTime date2)
+		{
+			return date1.Year == date2.Year && date1.Month == date2.Month && date1.Day == date2.Day;
+		}
 		void PlayAlarm()
 		{
 			axWindowsMediaPlayer.URL = nextAlarm.Filename;
@@ -115,10 +119,17 @@ namespace Clock
 			notifyIcon.Text = labelTime.Text;
 
 			if (
-				nextAlarm != null &&
+				(object)nextAlarm != null &&
+				(
+					nextAlarm.Date == DateTime.MinValue ?
+					nextAlarm.WeekDays.Contains(DateTime.Now.DayOfWeek) :
+					(CompareDates(nextAlarm.Date, DateTime.Now))
+					&&
+				//nextAlarm.WeekDays.Contains(DateTime.Now.DayOfWeek) &&
 				nextAlarm.Time.Hours == DateTime.Now.Hour &&
 				nextAlarm.Time.Minutes == DateTime.Now.Minute &&
 				nextAlarm.Time.Seconds == DateTime.Now.Second
+				)
 				)
 			{
 				System.Threading.Thread.Sleep(1000);
