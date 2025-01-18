@@ -50,6 +50,19 @@ namespace Clock
 			info += $"{Message}\t";
 			return info;
 		}
+public string ToFileString()
+		{
+			string info = "";
+			if (Date != DateTime.MinValue) info += $"{Date.Ticks}";
+			info += $",{DateTime.Today.Add(Time).Ticks},";
+			//info += Time;//.ToString(@"hh\:mm\:ss");
+
+			info += $"{WeekDays.ToFileString()},";
+			info += $"{Filename},";
+			info += $"{Message},";
+			return info;
+		}
+
 
 		/*public static bool operator ==(Alarm left, Alarm right)
 		{
